@@ -3,7 +3,7 @@ import Image from "next/image"
 export default function Alianzas() {
     const alianzas = [
         {
-            logo: "/images/cisco.png",
+            logo: "/public/images/cisco.png",
             descripcion: "Empresa líder en networking y seguridad informática",
             url: "https://www.cisco.com",
         },
@@ -28,7 +28,7 @@ export default function Alianzas() {
             url: "https://www.microsoft.com",
         },
         {
-            logo: "/images/oracle.png",
+            logo: "/images/Oracle.png",
             descripcion: "Especialistas en bases de datos y sistemas empresariales",
             url: "https://www.oracle.com",
         },

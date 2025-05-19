@@ -71,15 +71,15 @@ body {
 }
 
 /* Estilos para la sección de inicio con imagen de fondo */
-.inicio {
-  background-image: url("/images/fondopag.png");
+.inicio, .inicio2 {
+  background-image: url("../public/images/fondop.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   width: 100%;
   min-height: 100vh;
-  margin-top: 80px;
+  margin-top: 120px;
   display: flex;
   position: relative;
 }
