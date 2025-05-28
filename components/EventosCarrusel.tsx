@@ -15,39 +15,39 @@ export default function EventosCarrusel() {
     const slides: Slide[] = [
         {
             id: 0,
-            title: "Evento 1",
-            subtitle: "Saca tu niño interior en la ingeniería",
+            title: "Proyecto Integrador",
+            subtitle: "Demuestra tus conocimientos en la práctica",
             description:
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis animi rem iure sunt eius ullam provident minima odit, esse atque numquam ipsum, enim similique molestias dolores dignissimos sint earum impedit? Iste, eveniet ratione! Quasi quos deserunt veritatis explicabo perspiciatis laudantium molestiae obcaecati, odit veniam facere nam ipsum commodi neque adipisci placeat fuga iusto porro ex laboriosam delectus quod ipsa quis?",
-            backgroundImage: "/images/Enseñar.png",
-            videoSrc: "/videos/viideo.mp4",
+                "Los estudiantes de todos los semestres, demusetran sus conocimientos de todas las materias aplicadas en un solo trabajo en equipo",
+            backgroundImage: "/images/integrador.png",
+            videoSrc: "/videos/Vintegrador.mp4",
         },
         {
             id: 1,
-            title: "Evento 2",
-            subtitle: "Sí lo puedes imaginar lo puedes programar",
+            title: "InnovaTecNM",
+            subtitle: "La unión hace la fuerza",
             description:
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis animi rem iure sunt eius ullam provident minima odit, esse atque numquam ipsum, enim similique molestias dolores dignissimos sint earum impedit? Iste, eveniet ratione! Quasi quos deserunt veritatis explicabo perspiciatis laudantium molestiae obcaecati, odit veniam facere nam ipsum commodi neque adipisci placeat fuga iusto porro ex laboriosam delectus quod ipsa quis?",
-            backgroundImage: "/images/FondoInicio.png",
-            videoSrc: "/videos/viideo.mp4",
+                "Alumnos de todas las carreras forman equipos para desarrollar proyectos tecnológicos innovadores para competir entre si e intentar llegar a la competencia nacional",
+            backgroundImage: "/images/inntec.png",
+            videoSrc: "/videos/Vinno.mp4",
         },
         {
             id: 2,
-            title: "Evento 3",
-            subtitle: "Demuestra tus habilidades en programacion",
+            title: "Jornada Deportiva",
+            subtitle: "No todo es estudiar, distraete un rato!",
             description:
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis animi rem iure sunt eius ullam provident minima odit, esse atque numquam ipsum, enim similique molestias dolores dignissimos sint earum impedit? Iste, eveniet ratione! Quasi quos deserunt veritatis explicabo perspiciatis laudantium molestiae obcaecati, odit veniam facere nam ipsum commodi neque adipisci placeat fuga iusto porro ex laboriosam delectus quod ipsa quis?",
-            backgroundImage: "/images/zabbix.png",
-            videoSrc: "/videos/viideo.mp4",
+                "Para finalizar el semestre los estudiantes de todos los semestres juegan deportes de su agrado fomentando el compañerismo y el deporte",
+            backgroundImage: "/images/jdeportiva.png",
+            videoSrc: "/videos/Vjd.mp4",
         },
         {
             id: 3,
-            title: "Evento 4",
-            subtitle: "Entrena tus habilidades para el mercado laboral",
+            title: "Racing Cup",
+            subtitle: "Diviertete mientras practicas electrónica",
             description:
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis animi rem iure sunt eius ullam provident minima odit, esse atque numquam ipsum, enim similique molestias dolores dignissimos sint earum impedit? Iste, eveniet ratione! Quasi quos deserunt veritatis explicabo perspiciatis laudantium molestiae obcaecati, odit veniam facere nam ipsum commodi neque adipisci placeat fuga iusto porro ex laboriosam delectus quod ipsa quis?",
-            backgroundImage: "/images/cisco.png",
-            videoSrc: "/videos/viideo.mp4",
+                "Alumnos de nivel media superior y superior de todas las escuelas participan en el evento de carreras de carros a control remoto de la ing TICs contra alumnos de la carrera",
+            backgroundImage: "/images/rcup.png",
+            videoSrc: "/videos/racup.mp4",
         },
     ]
 

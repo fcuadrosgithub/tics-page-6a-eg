@@ -1,38 +1,39 @@
-import Image from "next/image"
+import Image from "next/image"; // Asegúrate de importar Image
+import Link from "next/link"; // Importa Link para navegación en Next.js
 
 export default function Alianzas() {
     const alianzas = [
         {
-            logo: "/public/images/cisco.png",
+            logo: "/images/cisco.png",
             descripcion: "Empresa líder en networking y seguridad informática",
-            url: "https://www.cisco.com",
+            url: "https://www.cisco.com/c/es_mx/index.html", // ¡Reemplaza con la URL real de Cisco!
         },
         {
             logo: "/images/huawei.png",
             descripcion: "Líder global en soluciones de telecomunicaciones",
-            url: "https://www.huawei.com",
+            url: "https://www.huawei.com/mx/", // ¡Reemplaza con la URL real de Huawei!
         },
         {
             logo: "/images/google.jpg",
             descripcion: "Empresa destacada por innovación en tecnologías web y cloud computing",
-            url: "https://www.google.com",
+            url: "https://about.google/", // ¡Reemplaza con la URL real de Google!
         },
         {
             logo: "/images/zabbix.png",
             descripcion: "Solución de monitoreo de red de código abierto",
-            url: "https://www.zabbix.com",
+            url: "https://www.zabbix.com/", // ¡Reemplaza con la URL real de Zabbix!
         },
         {
             logo: "/images/microsoft.png",
             descripcion: "Líder en software empresarial y soluciones de productividad",
-            url: "https://www.microsoft.com",
+            url: "https://www.microsoft.com/es-mx/", // ¡Reemplaza con la URL real de Microsoft!
         },
         {
-            logo: "/images/Oracle.png",
+            logo: "/images/oracle.png",
             descripcion: "Especialistas en bases de datos y sistemas empresariales",
-            url: "https://www.oracle.com",
+            url: "https://www.oracle.com/mx/index.html", // ¡Reemplaza con la URL real de Oracle!
         },
-    ]
+    ];
 
     return (
         <section id="Alianzas" className="alianzas-section">
@@ -45,14 +46,7 @@ export default function Alianzas() {
                     <div className="banda-contenedor">
                         {/* Items originales */}
                         {alianzas.map((alianza, index) => (
-                            <a
-                                href={alianza.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="banda-item"
-                                key={`alianza-${index}`}
-                                title={`Visitar sitio web de ${alianza.descripcion}`}
-                            >
+                            <div className="banda-item" key={`alianza-${index}`}>
                                 <div className="logo-container">
                                     <Image
                                         src={alianza.logo || "/placeholder.svg"}
@@ -64,21 +58,24 @@ export default function Alianzas() {
                                 </div>
                                 <div className="item-descripcion">
                                     <p>{alianza.descripcion}</p>
-                                    <p className="mt-2 text-xs font-bold">Click para visitar →</p>
+                                    {/* Botón "Saber Más" - ¡MODIFICADO PARA NEXT.JS 13+! */}
+                                    {alianza.url && ( // Solo renderiza el botón si hay una URL
+                                        <Link
+                                            href={alianza.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="saber-mas-btn"
+                                        >
+                                            Saber Más
+                                        </Link>
+                                    )}
                                 </div>
-                            </a>
+                            </div>
                         ))}
 
                         {/* Items duplicados para efecto continuo */}
                         {alianzas.map((alianza, index) => (
-                            <a
-                                href={alianza.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="banda-item"
-                                key={`alianza-duplicada-${index}`}
-                                title={`Visitar sitio web de ${alianza.descripcion}`}
-                            >
+                            <div className="banda-item" key={`alianza-duplicada-${index}`}>
                                 <div className="logo-container">
                                     <Image
                                         src={alianza.logo || "/placeholder.svg"}
@@ -90,13 +87,23 @@ export default function Alianzas() {
                                 </div>
                                 <div className="item-descripcion">
                                     <p>{alianza.descripcion}</p>
-                                    <p className="mt-2 text-xs font-bold">Click para visitar →</p>
+                                    {/* Botón "Saber Más" en los duplicados - ¡MODIFICADO PARA NEXT.JS 13+! */}
+                                    {alianza.url && (
+                                        <Link
+                                            href={alianza.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="saber-mas-btn"
+                                        >
+                                            Saber Más
+                                        </Link>
+                                    )}
                                 </div>
-                            </a>
+                            </div>
                         ))}
                     </div>
                 </div>
             </div>
         </section>
-    )
+    );
 }

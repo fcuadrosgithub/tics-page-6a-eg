@@ -124,9 +124,9 @@ export default function Header() {
                         ITICs
                     </a>
                     <a
-                        href="#Capacidades"
-                        className={activeSection === "Capacidades" ? "nav-link active" : "nav-link"}
-                        onClick={(e) => handleLinkClick(e, "Capacidades")}
+                        href="#capacidades-section"
+                        className={activeSection === "capacidades-section" ? "nav-link active" : "nav-link"}
+                        onClick={(e) => handleLinkClick(e, "capacidades-section")}
                     >
                         Capacidades
                     </a>

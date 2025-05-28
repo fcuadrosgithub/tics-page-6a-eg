@@ -1,16 +1,18 @@
-import Image from "next/image"
+import Image from "next/image"; // Asegúrate de importar Image
 
 export default function ITICs() {
     return (
         <section id="ITICs" className="info-section">
             <div className="info-container">
                 <div className="info-image">
+                    {/* Usando el componente Image de Next.js */}
                     <Image
-                        src="/images/Enseñar.png"
-                        alt="ITICs"
-                        width={500}
-                        height={300}
-                        style={{ width: "100%", height: "auto" }}
+                        src="/images/ense.png" // La ruta es relativa al directorio 'public'
+                        alt="enseñar"
+                        width={500} // Define el ancho original de tu imagen
+                        height={300} // Define el alto original de tu imagen
+                        layout="responsive" // Esto hará que la imagen sea responsiva
+                        objectFit="contain" // O "cover" dependiendo de cómo quieras que se ajuste
                     />
                 </div>
                 <div className="info-content">
@@ -23,20 +25,16 @@ export default function ITICs() {
                     </p>
 
                     <ul className="perfil-list">
-                        <li>Diseñar, implementar y administrar redes de cómputo y comunicaciones</li>
-                        <li>Integrar las diferentes arquitecturas de hardware y administrar plataformas de software</li>
+                        <li>Diseñan, implementan y administran redes de cómputo y comunicaciones, bajo estándares de seguridad de la información.</li>
+                        <li>Desarrollan software basado en metodologías emergentes.</li>
                         <li>
-                            Integrar soluciones basadas en sistemas de comunicaciones que involucren tecnologías actuales y emergentes
+                            Desempeñan funciones de auditoría en el campo de las Tecnologías de la Información y Comunicaciones.
                         </li>
-                        <li>Desempeñar funciones de consultoría y auditoría</li>
-                        <li>Utilizar tecnologías y herramientas actuales y emergentes</li>
-                        <li>
-                            Desarrollar e implementar sistemas de información para el control y la toma de decisiones utilizando
-                            metodologías basadas en estándares internacionales
-                        </li>
+                        <li>Participan en proyectos de TI o crea empresas, en el ámbito de las tecnologías de la información bajo un marco legal.</li>
+                        
                     </ul>
                 </div>
             </div>
         </section>
-    )
+    );
 }

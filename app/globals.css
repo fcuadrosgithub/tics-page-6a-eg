@@ -71,15 +71,17 @@ body {
 }
 
 /* Estilos para la sección de inicio con imagen de fondo */
-.inicio, .inicio2 {
+.inicio {
   background-image: url("../public/images/fondop.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: top center;
+  /* Ensures the top of the image is visible and horizontally centered */
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
+  /* Consider keeping this commented for now to simplify */
   width: 100%;
-  min-height: 100vh;
-  margin-top: 120px;
+  min-height: 135vh;
+  margin-top: 80px;
   display: flex;
   position: relative;
 }
@@ -230,7 +232,6 @@ body {
   animation: desplazar 30s linear infinite;
 }
 
-/* Modificar los estilos de banda-item para que funcione como enlace */
 .banda-item {
   width: 180px;
   height: 140px;
@@ -247,8 +248,6 @@ body {
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
   overflow: hidden;
-  text-decoration: none;
-  cursor: pointer;
 }
 
 .logo-container {
@@ -282,13 +281,6 @@ body {
   line-height: 1.4;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   opacity: 0.9;
-}
-
-/* Añadir un indicador visual para los enlaces */
-.item-descripcion .mt-2 {
-  margin-top: 8px;
-  color: #f1c40f;
-  font-weight: bold;
 }
 
 /* Efectos hover */
@@ -1103,3 +1095,355 @@ body {
     flex-wrap: wrap;
   }
 }
+
+/* Estilos para la sección de capacidades */
+.capacidades-section {
+  background-color: #f8f9fa;
+  /* Color de fondo de tu globals */
+  padding: 80px 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  /* Asegura que las animaciones no creen barras de desplazamiento */
+}
+
+.capacidades-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  /* Por defecto en columnas para móviles */
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  /* Espacio entre los lados */
+  width: 100%;
+  /* Ocupa todo el ancho disponible */
+}
+
+@media (min-width: 768px) {
+
+  /* Para pantallas medianas y más grandes */
+  .capacidades-container {
+    flex-direction: row;
+    /* En filas para escritorios */
+    align-items: flex-start;
+    /* Alinear arriba en modo escritorio */
+  }
+}
+
+/* Título principal de la sección (Imagen 2) */
+.capacidades-main-title {
+  color: #2c3e50;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  /* Espacio debajo del título */
+  text-align: center;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.capacidades-main-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  /* Longitud de la línea debajo del título */
+  height: 4px;
+  background-color: #3498db;
+  /* Color de la línea, ajusta si prefieres otro */
+  border-radius: 2px;
+}
+
+/* Lado Izquierdo: Botones */
+.capacidades-buttons-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Centrar botones en móviles */
+  margin-bottom: 40px;
+  /* Espacio inferior en móviles */
+}
+
+.capacidades-button-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  /* Espacio entre botones */
+  width: 100%;
+  align-items: center;
+}
+
+
+@media (min-width: 768px) {
+  .capacidades-buttons-wrapper {
+    width: 40%;
+    /* Ocupa el 40% del ancho para los botones */
+    align-items: flex-end;
+    /* Alinear a la derecha en escritorios */
+    padding-right: 40px;
+    /* Espacio a la derecha */
+    margin-bottom: 0;
+    /* Sin margen inferior en escritorio */
+  }
+
+  .capacidades-button-list {
+    align-items: flex-end;
+    /* Alinear la lista de botones a la derecha */
+  }
+}
+
+.capacidad-button {
+  background-color: #3498db;
+  /* Azul de tus estilos */
+  color: white;
+  font-weight: bold;
+  padding: 12px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  width: 90%;
+  /* Ancho en móviles */
+  max-width: 350px;
+  /* Ancho máximo para botones */
+  text-align: center;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  /* Por defecto invisible para la animación slideIn */
+  position: relative;
+  /* Necesario para la línea activa */
+  overflow: hidden;
+  /* Para el efecto hover de la línea */
+}
+
+.capacidad-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo para el botón activo */
+.capacidad-button.active {
+  background-color: #f1c40f;
+  /* Amarillo de tu menú activo */
+  color: #2c3e50;
+  /* Color de texto oscuro para el amarillo */
+  font-weight: bold;
+  transform: scale(1.05);
+  /* Ligeramente más grande */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.capacidad-button.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5px;
+  /* Ancho de la línea vertical */
+  height: 100%;
+  background-color: #e74c3c;
+  /* Rojo de tu carrusel */
+  transition: width 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .capacidad-button {
+    width: 70%;
+    /* Ajusta el ancho en escritorio */
+    text-align: right;
+    /* Alinear el texto a la derecha */
+    padding-right: 35px;
+    /* Más padding para la línea */
+  }
+
+  .capacidad-button.active::after {
+    width: 8px;
+    /* Línea más ancha en desktop */
+  }
+}
+
+
+/* Lado Derecho: Contenido */
+.capacidades-content-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* Centrar en móviles */
+}
+
+@media (min-width: 768px) {
+  .capacidades-content-wrapper {
+    width: 60%;
+    /* Ocupa el 60% del ancho para el contenido */
+    justify-content: flex-start;
+    /* Alinear a la izquierda en escritorios */
+    padding-left: 40px;
+    /* Espacio a la izquierda */
+  }
+}
+
+.capacidad-info {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  /* Por defecto centrado */
+  max-width: 700px;
+  /* Ancho máximo para el contenido */
+  width: 100%;
+  /* Animación fadeIn ya está en globals.css y será aplicada por JS */
+}
+
+@media (min-width: 768px) {
+  .capacidad-info {
+    text-align: left;
+    /* Alinear texto a la izquierda en escritorio */
+  }
+}
+
+/* Título de la capacidad individual (dentro del contenido) */
+.capacidad-sub-title {
+  color: #2c3e50;
+  /* Color de tus títulos */
+  font-size: 28px;
+  /* Tamaño del título del contenido */
+  margin-top: 15px;
+  /* Espacio arriba si hay video */
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.capacidad-info .capacidad-sub-title:first-child {
+  margin-top: 0;
+  /* Si no hay video, que no tenga margen superior extra */
+}
+
+
+.capacidad-description {
+  color: #555;
+  /* Color de texto más suave */
+  line-height: 1.7;
+  font-size: 17px;
+}
+
+/* Responsividad para el video de YouTube */
+.video-responsive-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* Relación de aspecto 16:9 */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background: #000;
+  margin: 0 auto 25px auto;
+  /* Centrar y espacio debajo del video */
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  /* Sombra para el video */
+}
+
+.video-responsive-container .youtube-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* --- Animaciones (ya las tienes definidas en globals.css, solo asegúrate que estén activas) --- */
+/*
+@keyframes slideIn { ... }
+@keyframes fadeIn { ... }
+.animate-slide-in { animation: slideIn 0.8s ease-out forwards; }
+.animate-fade-in { animation: fadeIn 0.5s ease-out forwards; }
+*/
+
+/* Media Queries para responsividad (ajustados si es necesario) */
+@media (max-width: 768px) {
+  .capacidades-section {
+    padding: 60px 15px;
+  }
+
+  .capacidades-main-title {
+    font-size: 26px;
+    margin-bottom: 25px;
+  }
+
+  .capacidades-main-title::after {
+    width: 60px;
+  }
+
+  .capacidad-sub-title {
+    font-size: 24px;
+  }
+
+  .capacidad-description {
+    font-size: 15px;
+  }
+
+  .capacidad-button {
+    font-size: 16px;
+    padding: 10px 20px;
+    max-width: 280px;
+    text-align: center;
+    /* Centrar texto en móviles */
+    padding-right: 25px;
+    /* Restablecer padding derecho */
+  }
+
+  .capacidad-button.active::after {
+    width: 5px;
+    /* Línea de ancho original */
+  }
+}
+
+@media (max-width: 480px) {
+  .capacidades-main-title {
+    font-size: 22px;
+  }
+
+  .capacidad-sub-title {
+    font-size: 20px;
+  }
+}
+
+/* Estilos para el botón "Saber Más" de alianzas*/
+.saber-mas-btn {
+  display: inline-block;
+  padding: 4px 10px;
+  background-color: #f1c40f;
+  /* Color amarillo de tu menú activo */
+  color: #2c3e50;
+  /* Color de texto oscuro para contraste */
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+  /* Añadir color a la transición */
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.saber-mas-btn:hover {
+  background-color: #e6b100;
+  /* Un amarillo un poco más oscuro al hacer hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  /* Color blanco para el texto al hacer hover, si lo deseas */
+}
+
+
